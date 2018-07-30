@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/javascript">
+    var weather;
+    var apiPath = 'http://api.openweathermap.org/data/2.5/find?q=';
+    var apiKey = '&4a9a9ff5a42512e2e81fef7f7cdaa48f';
+    var units = '&units=imperial';
+    var inputCity = select('#myCity');
+
+    function validateCity(){
+        var enteredCity = document.getElementById('myCity').value;
+        if (enteredCity.length == 0){
+            alert("Please enter a valid city");
+        }
+    }
+
+    function setup(){
+        createCanvas(300,300);
+        var url = apiPath + inputCity.value() + apiKey + units;
+        weather = loadJSON(url)
+    }
+
+    function displayWeather(){
+        validateCity();
+        setup();
+        document.write("Current temperture for " + input + "is: " + weather.main.temp);
+        document.write("Today's High is:"+ weather.main.temp_max);
+        document.write("Today's Low is:" + weather.main.temp_in);
+    }
+    function hellWord(){
+        document.write("Hello World");
+    }
+</script>
+    <title>Task Two</title>
+    <h4>Given a valid city. We will tell you the weather</h4>
+
+    <form onsubmit="displayWeather()">
+        <input name="city" onfocus="''" onclick="displayWeather()" value="Enter City here"></input>
+        <button type=submit name="getWeather" value="Submit">Submit</button>
+    </form>
+</head>
+<body>
+
+</body>
+</html>

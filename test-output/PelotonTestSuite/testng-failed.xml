@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [PelotonTestSuite]">
+  <test thread-count="5" name="TestAddToCart(failed)">
+    <classes>
+      <class name="com.interview.peloton.AddBikeToCartTest">
+        <methods>
+          <include name="addToCart"/>
+        </methods>
+      </class> <!-- com.interview.peloton.AddBikeToCartTest -->
+    </classes>
+  </test> <!-- TestAddToCart(failed) -->
+</suite> <!-- Failed suite [PelotonTestSuite] -->
